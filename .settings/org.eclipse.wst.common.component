@@ -2,6 +2,7 @@
     <wb-module deploy-name="PaginaPeliculas">
         <wb-resource deploy-path="/" source-path="/WebContent" tag="defaultRootSource"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/resources"/>
         <property name="context-root" value="PaginaPeliculas"/>
         <property name="java-output-path" value="/PaginaPeliculas/build/classes"/>
     </wb-module>
