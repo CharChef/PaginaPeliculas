@@ -13,19 +13,24 @@ public class LoginAction extends ActionSupport {
     
     public LoginAction()
     {
-    	this.username="admin";
-    	this.password="admin123";
+    	this.username="";
+    	this.password="";
     }
  
     public String execute() {
- 
-        if (this.username.equals("admin")
-                && this.password.equals("admin123")) {
-            return "success";
-        } else {
-            addActionError(getText("error.login"));
-            return "error";
-        }
+    	
+    	if(this.username.equals("")|| this.password.equals("")){
+    		addActionError(getText("error.campos"));
+    		return ERROR;
+    	}else{
+    		if (this.username.equals("admin")
+                    && this.password.equals("admin123")) {
+                return SUCCESS;
+            } else {
+                addActionError(getText("error.login"));
+                return ERROR;
+            }
+    	}
     }
  
     public String getUsername() {
