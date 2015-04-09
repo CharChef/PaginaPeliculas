@@ -81,7 +81,15 @@ public class ListaPeliculas {
     }
 	
 	private void setearPeliculas(PositionList<Pelicula> pelis) {
-		// TODO Auto-generated method stub
-		
+		Manejador man = new Manejador();
+		man.ReStart();
+		for(Pelicula p : pelis){
+		    //insertarPelicula(i);
+		    man.añadirLineaFinal(p.getNombre() + "\r\n");
+        	man.añadirLineaFinal(p.getCalificacion()+ "\r\n");
+        	man.añadirLineaFinal(p.getComentario()+ "\r\n");
+        	man.añadirLineaFinal(p.getLinkTrailer()+ "\r\n");
+		}
+		man.close();
 	}
 }
