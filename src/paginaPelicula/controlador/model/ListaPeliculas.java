@@ -28,7 +28,7 @@ public class ListaPeliculas {
         return ret;
     }
 	
-	public void EncontraryCambiar(String nomv,String nomb, String coment ,int calif,URL lin){
+	public void Change(String nomv,String nomb, String coment ,int calif,URL lin){
         PositionList<Pelicula> pel = ListarPeliculas();
         for(Pelicula i : pel){
             if(i.getNombre().equals(nomv)){
