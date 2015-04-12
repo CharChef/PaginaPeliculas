@@ -28,21 +28,40 @@ public class ListaPeliculas {
         return ret;
     }
 	
-	public void Change(String nomv,String nomb, String coment ,int calif,URL lin){
-        PositionList<Pelicula> pel = ListarPeliculas();
+	public boolean cambiarInsertar(String nombre, String comentario, URL linkTrailer ,int calificacion){
+        PositionList<Pelicula> pel = listarPeliculas();
+        boolean found = false;
         for(Pelicula i : pel){
-            if(i.getNombre().equals(nomv)){
-                i.setNombre(nomb);
-                i.setCalificacion(calif);
-                i.setComentario(coment);
-                i.setLinkTrailer(lin);
+            if(i.getNombre().equals(nombre)){
+            	found = true;
+                i.setNombre(nombre);
+                i.setComentario(comentario);
+                i.setLinkTrailer(linkTrailer);
+                i.setCalificacion(calificacion);
+                break;
             }
         }
-        setearPeliculas(pel);
-       
+        if(found){
+        	setearPeliculas(pel);
+        }else{
+        	Manejador man = null;
+            try{
+            	man = new Manejador();
+            	man.añadirLineaFinal(nombre + "\r\n");
+            	man.añadirLineaFinal(comentario+ "\r\n");
+            	man.añadirLineaFinal(linkTrailer+ "\r\n");
+            	man.añadirLineaFinal(calificacion+ "\r\n");
+            	man.close();
+            }
+            catch(Exception e){
+    			// TODO Auto-generated catch block
+    			e.printStackTrace();
+    		}
+        }
+		return found;
 	}
 
-	public PositionList<Pelicula> ListarPeliculas() {
+	public PositionList<Pelicula> listarPeliculas() {
 		
         Manejador aux = new Manejador();
         PositionList<Pelicula> pel = new DoubleLinkedList<Pelicula>();
@@ -70,12 +89,13 @@ public class ListaPeliculas {
         return pel;
     }
 	
-	public boolean ExistePelicula(Pelicula P){
+	public boolean existePelicula(Pelicula P){
 		boolean sal = false;
-		PositionList<Pelicula> pel = ListarPeliculas();
+		PositionList<Pelicula> pel = listarPeliculas();
 		for(Pelicula i : pel){
 		    if( (P.getNombre().equals(i.getNombre())))
 		        sal = true;
+		    	break;
 		}
 		return sal;
     }
