@@ -2,13 +2,12 @@ package paginaPelicula.controlador.model;
 
 import java.net.MalformedURLException;
 import java.net.URL;
-
 import TDALista.DoubleLinkedList;
 import TDALista.PositionList;
 
 public class ListaPeliculas {
 	
-	private ListaPeliculas(){}
+	public ListaPeliculas(){}
 	
 	public boolean insertarPelicula(Pelicula P) {
         boolean ret = false;
