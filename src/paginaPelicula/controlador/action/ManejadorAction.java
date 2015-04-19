@@ -22,9 +22,18 @@ public class ManejadorAction extends ActionSupport {
 	 */
 	private static final long serialVersionUID = 1L;
 	
-	public String executeCambiarInsertarPelicula(){
-		ListaPeliculas auxListaPeliculas = new ListaPeliculas();
-		auxListaPeliculas.cambiarInsertar(nombre, comentario, linkTrailer, calificacion);
+	public String executeCambiarInsertar(){
+		new ListaPeliculas().cambiarInsertar(nombre, comentario, linkTrailer, calificacion);
+		return SUCCESS;
+	}
+	
+	public String executeListarPeliculas(){
+		listaPeliculas = new ListaPeliculas().listarPeliculas();
+		return SUCCESS;
+	}
+	
+	public String executeBorrarPelicula(){
+		new ListaPeliculas().borrarPelicula(nombre);
 		return SUCCESS;
 	}
 }

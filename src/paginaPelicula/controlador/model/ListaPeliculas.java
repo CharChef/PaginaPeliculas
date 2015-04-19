@@ -2,7 +2,12 @@ package paginaPelicula.controlador.model;
 
 import java.net.MalformedURLException;
 import java.net.URL;
+
+import TDALista.BoundaryViolationException;
 import TDALista.DoubleLinkedList;
+import TDALista.EmptyListException;
+import TDALista.InvalidPositionException;
+import TDALista.Position;
 import TDALista.PositionList;
 
 public class ListaPeliculas {
@@ -98,7 +103,27 @@ public class ListaPeliculas {
 		}
 		return sal;
     }
-	
+
+	public void borrarPelicula(String nombre){
+		try{
+			PositionList<Pelicula> pel = listarPeliculas();
+			if(!pel.isEmpty()){
+				Position<Pelicula> peliminar = pel.first();
+				while(peliminar!=null){
+					if(peliminar.element().getNombre().equals(nombre)){
+						break;
+					}
+					peliminar = pel.last()==peliminar ? null : pel.next(peliminar);
+				}
+				pel.remove(peliminar);
+			    setearPeliculas(pel);
+			}
+		}catch(InvalidPositionException | EmptyListException | BoundaryViolationException e){
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
 	private void setearPeliculas(PositionList<Pelicula> pelis) {
 		Manejador man = new Manejador();
 		man.ReStart();
@@ -111,4 +136,6 @@ public class ListaPeliculas {
 		}
 		man.close();
 	}
+	
+	
 }
