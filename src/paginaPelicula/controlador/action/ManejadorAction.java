@@ -1,13 +1,10 @@
 package paginaPelicula.controlador.action;
 
 import java.net.URL;
-
 import paginaPelicula.controlador.model.ListaPeliculas;
 import paginaPelicula.controlador.model.Pelicula;
-import sun.util.locale.provider.AuxLocaleProviderAdapter;
 import TDALista.DoubleLinkedList;
 import TDALista.PositionList;
-
 import com.opensymphony.xwork2.ActionSupport;
 
 public class ManejadorAction extends ActionSupport {
@@ -22,7 +19,8 @@ public class ManejadorAction extends ActionSupport {
 	private String comentario;
 	private URL linkTrailer;
 	private int calificacion;
-	private PositionList<PositionList<Pelicula>> listaPeliculas;
+	private PositionList<PositionList<Pelicula>> listaDeListaPeliculas;
+	private PositionList<Pelicula> listaPeliculas;
 
 	public String executeCambiarInsertar(){
 		new ListaPeliculas().cambiarInsertar(nombre, comentario, linkTrailer, calificacion);
@@ -30,19 +28,18 @@ public class ManejadorAction extends ActionSupport {
 	}
 	
 	public String executeListarPeliculas(){
-		PositionList<PositionList<Pelicula>> auxList = new DoubleLinkedList<PositionList<Pelicula>>();
-		PositionList<Pelicula> auxList2 = null;
-		PositionList<Pelicula> auxList3 = new ListaPeliculas().listarPeliculas();
+		PositionList<PositionList<Pelicula>> listaDeListaPeliculas = new DoubleLinkedList<PositionList<Pelicula>>();
+		PositionList<Pelicula> auxList = null;
+		PositionList<Pelicula> listaPeliculas = new ListaPeliculas().listarPeliculas();
 		int i = 0;
-		for(Pelicula p : auxList3){
+		for(Pelicula p : listaPeliculas){
 			if(i==0){
-				auxList2 = new DoubleLinkedList<Pelicula>();
-				auxList.addLast(auxList2);
+				auxList = new DoubleLinkedList<Pelicula>();
+				listaDeListaPeliculas.addLast(auxList);
 			}
-			auxList2.addLast(p);
+			auxList.addLast(p);
 			i = (i+1) % 4;
 		}
-		listaPeliculas = auxList;
 		return SUCCESS;
 	}
 	
@@ -93,14 +90,22 @@ public class ManejadorAction extends ActionSupport {
 		this.calificacion = calificacion;
 	}
 
-	public PositionList<PositionList<Pelicula>> getListaPeliculas() {
+	public PositionList<PositionList<Pelicula>> getListaDeListaPeliculas() {
+		return listaDeListaPeliculas;
+	}
+
+	public void setListaDeListaPeliculas(
+			PositionList<PositionList<Pelicula>> listaDeListaPeliculas) {
+		this.listaDeListaPeliculas = listaDeListaPeliculas;
+	}
+
+	public PositionList<Pelicula> getListaPeliculas() {
 		return listaPeliculas;
 	}
 
-	public void setListaPeliculas(
-			PositionList<PositionList<Pelicula>> listaPeliculas) {
+	public void setListaPeliculas(PositionList<Pelicula> listaPeliculas) {
 		this.listaPeliculas = listaPeliculas;
 	}
-	
+
 	
 }
