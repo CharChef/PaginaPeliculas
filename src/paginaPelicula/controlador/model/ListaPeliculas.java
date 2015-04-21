@@ -14,15 +14,20 @@ public class ListaPeliculas {
 	
 	public ListaPeliculas(){}
 	
-	public boolean insertarPelicula(Pelicula P) {
+	public boolean insertarPelicula(Pelicula p) {
         boolean ret = false;
         Manejador man = null;
         try{
         	man = new Manejador();
-        	man.añadirLineaFinal(P.getNombre() + "\r\n");
-        	man.añadirLineaFinal(P.getCalificacion()+ "\r\n");
-        	man.añadirLineaFinal(P.getComentario()+ "\r\n");
-        	man.añadirLineaFinal(P.getLinkTrailer()+ "\r\n");
+        	man.aniadirLineaFinal(p.getNombre() + "\r\n");
+        	man.aniadirLineaFinal(p.getAnio() + "\r\n");
+        	man.aniadirLineaFinal(p.getCalificacion() + "\r\n");
+        	man.aniadirLineaFinal(p.getImdb() + "\r\n");
+        	man.aniadirLineaFinal(p.getCal_imdb() + "\r\n");
+        	man.aniadirLineaFinal(p.getTrailer()+ "\r\n");
+        	man.aniadirLineaFinal(p.getCategoria() + "\r\n");
+        	man.aniadirLineaFinal(p.getComentario()+ "\r\n");
+        	man.aniadirLineaFinal(p.getTapa()+ "\r\n");
         	man.close();
 	        ret = true;}
         catch(Exception e){
@@ -32,16 +37,23 @@ public class ListaPeliculas {
         return ret;
     }
 	
-	public boolean cambiarInsertar(String nombre, String comentario, URL linkTrailer ,int calificacion){
+	public boolean cambiarInsertar(String nombre, int anio, int calificacion, URL imdb,
+			double cal_imdb, URL trailer, String categoria, String comentario,
+			String tapa){
         PositionList<Pelicula> pel = listarPeliculas();
         boolean found = false;
         for(Pelicula i : pel){
             if(i.getNombre().equals(nombre)){
             	found = true;
                 i.setNombre(nombre);
-                i.setComentario(comentario);
-                i.setLinkTrailer(linkTrailer);
+                i.setAnio(anio);
                 i.setCalificacion(calificacion);
+                i.setImdb(imdb);
+                i.setCal_imdb(cal_imdb);
+                i.setTrailer(trailer);
+                i.setCategoria(categoria);
+                i.setComentario(comentario);
+                i.setTapa(tapa);
                 break;
             }
         }
@@ -51,10 +63,15 @@ public class ListaPeliculas {
         	Manejador man = null;
             try{
             	man = new Manejador();
-            	man.añadirLineaFinal(nombre + "\r\n");
-            	man.añadirLineaFinal(comentario+ "\r\n");
-            	man.añadirLineaFinal(linkTrailer+ "\r\n");
-            	man.añadirLineaFinal(calificacion+ "\r\n");
+            	man.aniadirLineaFinal(nombre + "\r\n");
+            	man.aniadirLineaFinal(anio + "\r\n");
+            	man.aniadirLineaFinal(calificacion + "\r\n");
+            	man.aniadirLineaFinal(imdb + "\r\n");
+            	man.aniadirLineaFinal(cal_imdb + "\r\n");
+            	man.aniadirLineaFinal(trailer+ "\r\n");
+            	man.aniadirLineaFinal(categoria + "\r\n");
+            	man.aniadirLineaFinal(comentario+ "\r\n");
+            	man.aniadirLineaFinal(tapa+ "\r\n");
             	man.close();
             }
             catch(Exception e){
@@ -71,25 +88,34 @@ public class ListaPeliculas {
         PositionList<Pelicula> pel = new DoubleLinkedList<Pelicula>();
         
     	String nombre = aux.leerLinea();
-    	String comentario;
-    	URL linkTrailer = null;
-    	int calificacion;
+    	int anio = 0;
+    	int calificacion = 0;
+    	URL imdb = null;
+		double cal_imdb = 0;
+		URL trailer = null;
+		String categoria = "";
+    	String comentario = "";
+    	String tapa = "";
     	
-        while ((nombre = aux.leerLinea()) != null) {
+        while (nombre != null) {
         	
-        	comentario = aux.leerLinea();
         	try {
-				linkTrailer = new URL(aux.leerLinea());
+        		anio = Integer.parseInt(aux.leerLinea());
+            	calificacion = Integer.parseInt(aux.leerLinea());
+        		imdb = new URL(aux.leerLinea());
+        		cal_imdb = Double.parseDouble(aux.leerLinea());
+        		trailer = new URL(aux.leerLinea());
+        		categoria = aux.leerLinea();
+            	comentario = aux.leerLinea();
+            	tapa = aux.leerLinea();
 			} catch (MalformedURLException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-        	calificacion = Integer.parseInt(aux.leerLinea());
-        	pel.addLast(new Pelicula(nombre, comentario, linkTrailer, calificacion));
+			pel.addLast(new Pelicula(nombre, anio, calificacion, imdb, cal_imdb, trailer, categoria, comentario, tapa));
         	nombre = aux.leerLinea();
         }
         aux.close();
-
         return pel;
     }
 	
@@ -129,10 +155,15 @@ public class ListaPeliculas {
 		man.ReStart();
 		for(Pelicula p : pelis){
 		    //insertarPelicula(i);
-		    man.añadirLineaFinal(p.getNombre() + "\r\n");
-        	man.añadirLineaFinal(p.getCalificacion()+ "\r\n");
-        	man.añadirLineaFinal(p.getComentario()+ "\r\n");
-        	man.añadirLineaFinal(p.getLinkTrailer()+ "\r\n");
+			man.aniadirLineaFinal(p.getNombre() + "\r\n");
+        	man.aniadirLineaFinal(p.getAnio() + "\r\n");
+        	man.aniadirLineaFinal(p.getCalificacion() + "\r\n");
+        	man.aniadirLineaFinal(p.getImdb() + "\r\n");
+        	man.aniadirLineaFinal(p.getCal_imdb() + "\r\n");
+        	man.aniadirLineaFinal(p.getTrailer()+ "\r\n");
+        	man.aniadirLineaFinal(p.getCategoria() + "\r\n");
+        	man.aniadirLineaFinal(p.getComentario()+ "\r\n");
+        	man.aniadirLineaFinal(p.getTapa()+ "\r\n");
 		}
 		man.close();
 	}

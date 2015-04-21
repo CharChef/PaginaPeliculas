@@ -52,7 +52,7 @@ public class Manejador {
         return linea;
     }
     
-    public void añadirLineaFinal(String dato) {
+    public void aniadirLineaFinal(String dato) {
         try {
             escritor.append(dato);
         } catch (IOException e) {

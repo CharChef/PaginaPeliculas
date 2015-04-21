@@ -1,0 +1,127 @@
+@CHARSET "ISO-8859-1";
+/* 
+    TDP Proyecto Final - 2013
+    Agra, Federico (94186)
+    Loza, Carlos (94399)
+*/
+body
+{
+	background: url(fondo.jpg) no-repeat fixed center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;	
+	font: regular bold 30px arial;
+	color: white;
+
+}
+
+header 
+{
+	background: url(titulo.png);
+    background-size: cover;
+    padding:75px 45px 70px 45px;  
+
+}
+
+table
+{
+	text-align: center;
+	color: white;
+}
+
+h4
+{
+	background:url(barra.png);
+	font-size:25px;
+   -webkit-text-fill-color: white;
+}
+
+h5
+{
+	background:url(barra.png);
+	font-size:20px;
+	-webkit-text-fill-color: white;
+}
+
+td
+{
+	background-repeat: no-repeat;
+	background-size: cover;
+	font-family:Verdana,Helvetica;
+	font-size:15px;
+	border: 2px solid white;
+	width: 800px;
+	height: 450px;
+	
+}
+
+.botonI
+{
+	font-size:11px;
+	font-family:Verdana,Helvetica;
+	font-weight:bold;
+ 	color:#80ffff;
+ 	background:#008080;
+ 	border:0px;
+ 	width:100px;
+ 	height:23px;
+ 	position: absolute;
+	right: 10px;
+	top: 7px;
+}
+
+.BotonesAct:HOVER 
+{
+ 	background: #004040;
+	text-decoration: none;
+  	background: transparent;
+  	background-image: url(barra2osc.png);
+}
+
+.BotonesAct
+{
+	font-size:15px;
+	font-family:Verdana,Helvetica;
+	font-weight:bold;
+ 	color:#80ffff;
+ 	background: transparent;
+ 	border: transparent;
+ 	width:500px;
+ 	height:50px;
+ 	margin-bottom: 5px;
+ 	background-image: url(barra2cla.png);
+}
+
+.botones
+{
+	margin-bottom: 40px;
+}
+
+.panelIngresar
+{
+	position: absolute;
+	right: 115px;
+	top: 8px;
+	font-family:Verdana,Helvetica;
+	font-weight:bold;
+	font-size:12px;
+}
+
+.panelUsuario
+{
+	position: absolute;
+	right: 115px;
+	top: 12px;
+	font-family:Verdana,Helvetica;
+	font-weight:bold;
+	font-size:12px;
+}
+
+.panelTitulo
+{
+	padding-top: 50px;
+	padding-bottom: 10px;
+    width: 600px;
+    margin:0 auto;        
+}

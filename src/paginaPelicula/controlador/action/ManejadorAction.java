@@ -1,10 +1,12 @@
 package paginaPelicula.controlador.action;
 
 import java.net.URL;
+
 import paginaPelicula.controlador.model.ListaPeliculas;
 import paginaPelicula.controlador.model.Pelicula;
 import TDALista.DoubleLinkedList;
 import TDALista.PositionList;
+
 import com.opensymphony.xwork2.ActionSupport;
 
 public class ManejadorAction extends ActionSupport {
@@ -19,11 +21,17 @@ public class ManejadorAction extends ActionSupport {
 	private String comentario;
 	private URL linkTrailer;
 	private int calificacion;
+	private int anio;
+	private URL imdb;
+	private double cal_imdb;
+	private URL trailer;
+	private String categoria;
+	private String tapa;
 	private PositionList<PositionList<Pelicula>> listaDeListaPeliculas;
 	private PositionList<Pelicula> listaPeliculas;
 
 	public String executeCambiarInsertar(){
-		new ListaPeliculas().cambiarInsertar(nombre, comentario, linkTrailer, calificacion);
+		new ListaPeliculas().cambiarInsertar(nombre, anio, calificacion, imdb, cal_imdb, trailer, categoria, comentario, tapa);
 		return SUCCESS;
 	}
 	
