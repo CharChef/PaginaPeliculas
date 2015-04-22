@@ -1,12 +1,10 @@
 package paginaPelicula.controlador.action;
 
 import java.net.URL;
-
 import paginaPelicula.controlador.model.ListaPeliculas;
 import paginaPelicula.controlador.model.Pelicula;
 import TDALista.DoubleLinkedList;
 import TDALista.PositionList;
-
 import com.opensymphony.xwork2.ActionSupport;
 
 public class ManejadorAction extends ActionSupport {
@@ -29,16 +27,16 @@ public class ManejadorAction extends ActionSupport {
 	private String tapa;
 	private PositionList<PositionList<Pelicula>> listaDeListaPeliculas;
 	private PositionList<Pelicula> listaPeliculas;
-
+	
 	public String executeCambiarInsertar(){
 		new ListaPeliculas().cambiarInsertar(nombre, anio, calificacion, imdb, cal_imdb, trailer, categoria, comentario, tapa);
 		return SUCCESS;
 	}
 	
 	public String executeListarPeliculas(){
-		PositionList<PositionList<Pelicula>> listaDeListaPeliculas = new DoubleLinkedList<PositionList<Pelicula>>();
+		listaDeListaPeliculas = new DoubleLinkedList<PositionList<Pelicula>>();
 		PositionList<Pelicula> auxList = null;
-		PositionList<Pelicula> listaPeliculas = new ListaPeliculas().listarPeliculas();
+		listaPeliculas = new ListaPeliculas().listarPeliculas();
 		int i = 0;
 		for(Pelicula p : listaPeliculas){
 			if(i==0){
@@ -47,6 +45,12 @@ public class ManejadorAction extends ActionSupport {
 			}
 			auxList.addLast(p);
 			i = (i+1) % 4;
+		}
+		System.out.println(listaDeListaPeliculas.size());
+		for(PositionList<Pelicula> lp : listaDeListaPeliculas){
+			for(Pelicula p : lp){
+				System.out.println(p.getNombre());
+			}
 		}
 		return SUCCESS;
 	}
@@ -114,6 +118,4 @@ public class ManejadorAction extends ActionSupport {
 	public void setListaPeliculas(PositionList<Pelicula> listaPeliculas) {
 		this.listaPeliculas = listaPeliculas;
 	}
-
-	
 }

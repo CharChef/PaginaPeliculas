@@ -23,12 +23,12 @@
             <s:submit class="botonI" value="Iniciar Sesión"></s:submit>
         </div> 
          
-        <div class="tabla">          
+        <div class="tabla" align="center">
 			<table >
-			<s:iterator value="listaListas" var="lista" status="estado">
+			<s:iterator value="listaDeListaPeliculas" var="lista" status="estado">
 			<tr>
 				<s:iterator value="#lista">
-            		<td style="background-image: url(<s:property value = "cartelera"/>)">
+            		<td style="background-image: url(<s:property value = "tapa"/>)">
                 		<h4><s:property value="nombre" /></h4><br/>
                 		<h5>
                 		<s:property value="anio" /><br/>

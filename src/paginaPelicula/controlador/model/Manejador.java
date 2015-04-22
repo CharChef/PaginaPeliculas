@@ -16,9 +16,9 @@ public class Manejador {
     private BufferedReader lector;
     
     public Manejador(){
-    	
+    	archivo = new File(this.getClass().getResource("Manejador.class").getFile());
     	String aux = archivo.getAbsolutePath();
-        aux= aux.replace("EscritorLector.class", "Peliculas.txt"); 
+        aux= aux.replace("Manejador.class", "Peliculas.txt"); 
         aux= aux.replace("%20", " ");
         archivo = new File(aux);
         

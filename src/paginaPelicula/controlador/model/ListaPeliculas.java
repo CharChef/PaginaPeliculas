@@ -98,7 +98,6 @@ public class ListaPeliculas {
     	String tapa = "";
     	
         while (nombre != null) {
-        	
         	try {
         		anio = Integer.parseInt(aux.leerLinea());
             	calificacion = Integer.parseInt(aux.leerLinea());
@@ -112,6 +111,7 @@ public class ListaPeliculas {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
+        	//System.out.println(nombre+"|"+anio+"|"+calificacion+"|"+imdb+"|"+cal_imdb+"|"+trailer+"|"+categoria+"|"+comentario+"|"+tapa);
 			pel.addLast(new Pelicula(nombre, anio, calificacion, imdb, cal_imdb, trailer, categoria, comentario, tapa));
         	nombre = aux.leerLinea();
         }
