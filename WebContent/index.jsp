@@ -13,17 +13,17 @@
         <div class="panelTitulo">
             <header></header>
         </div>
-         
-        <div class="panelIngresar">
-            Usuario:<s:textfield></s:textfield>
-            Contraseña:<s:password></s:password>
-        </div> 
         
-        <div>
-        	<s:form action="acceder">
+        <s:form action="ingresar" namespace="/">
+        	<div class="panelIngresar">
+            	Usuario:<s:textfield name="username"></s:textfield>
+            	Contraseña:<s:password name="password"></s:password>
+        	</div> 
+        
+       		<div>
         		<s:submit class="botonI" value="Iniciar Sesión"></s:submit>
-        	</s:form>
-        </div> 
+       		</div> 
+        </s:form>
          
         <div class="tabla" align="center">
 			<table >
