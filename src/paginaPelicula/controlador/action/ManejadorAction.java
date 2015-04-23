@@ -57,7 +57,7 @@ public class ManejadorAction extends ActionSupport {
 	
 	public String executeBuscarPelicula(){
 		pelicula = new ListaPeliculas().buscarPelicula(nombre);
-		return categoria;
+		return SUCCESS;
 	}
 	
 	// TODO Auto-generated getters and setters block
