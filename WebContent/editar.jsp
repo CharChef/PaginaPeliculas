@@ -15,15 +15,9 @@
             <header></header>
         </div>
         
-        <div class="panelUsuario">
-            <s:text name="Administrador"></s:text>
-        </div> 
-     
-        <div>
-            <s:form action="index">
-           		<s:submit class="botonI" value="Cerrar Sesión"></s:submit>
-           	</s:form>
-        </div> 
+        <s:form action="index" class="inisec">
+           	<s:submit class="botonI" value="Cerrar Sesión"></s:submit>
+        </s:form>
         
         <div align="center">
         	<s:select label="Seleccionar Pelicula" cssClass="check-button" headerKey="1" list="listaNombresPeliculas" name="nombre" value="1" />

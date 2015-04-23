@@ -15,15 +15,9 @@
             <header></header>
         </div>
         
-        <div class="panelUsuario">
-            <s:text name="Administrador"></s:text>
-        </div> 
-     
-        <div>
-        	<s:form action="index">
-           		<s:submit class="botonI" value="Cerrar Sesión"></s:submit>
-           	</s:form>
-        </div> 
+        <s:form action="index" class="inisec">
+           	<s:submit class="botonI" value="Cerrar Sesión"></s:submit>
+        </s:form>
         
         <div class="botones" align="center">
         	<s:form action="editarPelicula">

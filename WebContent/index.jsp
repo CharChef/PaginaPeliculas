@@ -10,20 +10,24 @@
         <title>TDP PROYECTO 2013</title>
     </head>
     <body>
+    	
+    	<s:form action="ingresar" namespace="/" class="inisec">
+   	 		<div>
+   	 			<s:textfield class="usu" name="username" placeholder="Usuario"/>
+   	 		</div>	
+            <div>	
+            	<s:password class="pas" name="password" placeholder="Contraseña"/>
+			</div>
+			<div>
+        		<s:submit class="botonI" value="Iniciar Sesión"/>
+    		</div>
+    	</s:form>
+   
         <div class="panelTitulo">
             <header></header>
         </div>
         
-        <s:form action="ingresar" namespace="/">
-        	<div class="panelIngresar">
-            	Usuario:<s:textfield name="username"></s:textfield>
-            	Contraseña:<s:password name="password"></s:password>
-        	</div> 
         
-       		<div>
-        		<s:submit class="botonI" value="Iniciar Sesión"></s:submit>
-       		</div> 
-        </s:form>
          
         <div class="tabla" align="center">
 			<table >

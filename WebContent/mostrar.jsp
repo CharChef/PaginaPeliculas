@@ -15,16 +15,10 @@
             <header></header>
         </div>
         
-        <div>
-        	<s:form action="index">
-           		<s:submit class="botonI" value="Cerrar Sesión"></s:submit>
-           	</s:form>
-        </div> 
-        
-        <div class="panelUsuario">
-           	<s:text name="Administrador"></s:text>
-        </div> 
-        
+        <s:form action="index" class="inisec">
+           	<s:submit class="botonI" value="Cerrar Sesión"></s:submit>
+        </s:form>
+                
         <div>
        		<table class="tablaInfo" align="center">
         		<tr>
