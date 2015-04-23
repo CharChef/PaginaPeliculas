@@ -7,7 +7,7 @@
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 		<link rel="stylesheet" type="text/css" href="Imagenes/style.css"/>
-		<title>TDP PROYECTO 2013</title>
+        <title>TDP PROYECTO 2013</title>
 	</head>
 	
 	<body>
@@ -15,25 +15,22 @@
             <header></header>
         </div>
         
-        <div class="panelUsuario">
-            <s:text name="Administrador"></s:text>
-        </div> 
-     
         <div>
-            <s:form action="index">
+        	<s:form action="index">
            		<s:submit class="botonI" value="Cerrar Sesión"></s:submit>
            	</s:form>
         </div> 
         
-        <div align="center">
-        	<s:select label="Seleccionar Pelicula" cssClass="check-button" headerKey="1" list="listaNombresPeliculas" name="nombre" value="1" />
+        <div>
+            <s:hidden name="nomVie" value="%{mipeli.nombre}"/>
+            <s:text name ="%{mipeli.nombre}"/>
+            <s:text name ="%{mipeli.anio}"/>
+            <s:text name ="%{mipeli.categoria}"/>
+            <s:text name ="%{mipeli.calificacion}"/>
+            <s:text name ="%{mipeli.imdb}"/>
+            <s:text name ="%{mipeli.cal_imdb}"/>
+            <s:text name ="%{mipeli.trailer}"/>
+            <s:text name="%{mipeli.comentario}"/>
         </div>
-        
-        <div>
-            <s:form action="buscarPelicula">
-           		<s:submit class="botonI" value="Cerrar Sesión"></s:submit>
-           	</s:form>
-        </div> 
-        
 	</body>
 </html>

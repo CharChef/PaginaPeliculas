@@ -20,21 +20,31 @@
         </div> 
      
         <div>
-            <s:submit class="botonI" value="Cerrar Sesión"></s:submit>
+        	<s:form action="index">
+           		<s:submit class="botonI" value="Cerrar Sesión"></s:submit>
+           	</s:form>
         </div> 
         
-        <div class="botones">
-            <s:submit align="center" class="BotonesAct" value="Agregar Pelicula"></s:submit>
-            <s:submit align="center" class="BotonesAct" value="Editar Pelicula"></s:submit>
-        	<s:submit align="center" class="BotonesAct" value="Eliminar Pelicula"></s:submit>
+        <div class="botones" align="center">
+        	<s:form action="editarPelicula">
+            	<s:submit class="BotonesAct" value="Agregar Pelicula"></s:submit>
+            </s:form>
+            
+            <s:form action="editarPelicula">
+            	<s:submit class="BotonesAct" value="Editar Pelicula"></s:submit>
+            </s:form>
+            
+            <s:form action="editarPelicula">
+        		<s:submit class="BotonesAct" value="Eliminar Pelicula"></s:submit>
+       		</s:form>
         </div> 
                
-        <div class="tabla">          
+        <div class="tabla"  align="center">          
 			<table >
-			<s:iterator value="listaListas" var="lista" status="estado">
+			<s:iterator value="listaDeListaPeliculas" var="lista" status="estado">
 			<tr>
 				<s:iterator value="#lista">
-            		<td style="background-image: url(<s:property value = "cartelera"/>)">
+            		<td class="celda" style="background-image: url(<s:property value = "tapa"/>)">
                 		<h4><s:property value="nombre" /></h4><br/>
                 		<h5>
                 		<s:property value="anio" /><br/>

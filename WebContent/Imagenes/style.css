@@ -44,7 +44,15 @@ h5
 	-webkit-text-fill-color: white;
 }
 
-td
+.botonPeli
+{
+	position:absolute;
+	background:transparent;
+	width: 300px;
+	height: 450px;
+}
+
+.celda
 {
 	background-repeat: no-repeat;
 	background-size: cover;
