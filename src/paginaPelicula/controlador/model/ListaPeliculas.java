@@ -158,6 +158,7 @@ public class ListaPeliculas {
 			if(pelicula.getNombre().equals(nombre))
 			{
 				sal = pelicula;
+				break;
 			}
 		}
 		
