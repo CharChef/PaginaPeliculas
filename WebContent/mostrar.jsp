@@ -21,16 +21,20 @@
            	</s:form>
         </div> 
         
+        <div class="panelUsuario">
+            <s:text name="Administrador"></s:text>
+        </div> 
+        
         <div>
-            <s:hidden name="nomVie" value="%{mipeli.nombre}"/>
-            <s:text name ="%{mipeli.nombre}"/>
-            <s:text name ="%{mipeli.anio}"/>
-            <s:text name ="%{mipeli.categoria}"/>
-            <s:text name ="%{mipeli.calificacion}"/>
-            <s:text name ="%{mipeli.imdb}"/>
-            <s:text name ="%{mipeli.cal_imdb}"/>
-            <s:text name ="%{mipeli.trailer}"/>
-            <s:text name="%{mipeli.comentario}"/>
+            <s:hidden name="nomVie" value="nombre"/>
+            Nombre: <s:property value ="nombre"/><br/>
+            Año: <s:property value ="anio"/><br/>
+            Categoria: <s:property value ="categoria"/><br/>
+            Calificación: <s:property value ="calificacion"/><br/>
+            IMDB: <s:property value = "imdb"/><br/>
+            Calificación a IMDB: <s:property value = "cal_imdb"/><br/>
+            Link Trailer: <s:property value ="trailer"/><br/>
+            Comentario: <s:property value ="comentario"/><br/>
         </div>
 	</body>
 </html>

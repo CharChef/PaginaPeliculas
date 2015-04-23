@@ -21,12 +21,8 @@ Struts Configuration 2.0//EN" "http://struts.apache.org/dtds/struts-2.0.dtd">
 			<result name="success">editar.jsp</result>
 		</action>
 		
-		<action name="buscarPelicula" class="paginaPelicula.controlador.action.ManejadorAction" method=""> 
-			<result name="success">editar.jsp</result>
-		</action>
-		
-		<action name="mostrarPelicula" class="paginaPelicula.controlador.action.ManejadorAction" method="executeListarPeliculas"> 
-			<result name="success">editar.jsp</result>
+		<action name="mostrarPelicula" class="paginaPelicula.controlador.action.ManejadorAction" method="executeBuscarPelicula"> 
+			<result name="success">mostrar.jsp</result>
 		</action>
 		
 	</package>

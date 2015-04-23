@@ -31,7 +31,7 @@
 				<tr>
 					<s:iterator value="#lista">
             			<td class="celda" style="background-image: url(<s:property value = "tapa"/>)"> 
-            			<a href="<s:url namespace="/" action="mostrarPelicula"></s:url>">
+            			<a href="<s:url namespace="/" action="mostrarPelicula"><s:param name="nombre" value="%{nombre}" /></s:url>">
                 			<h4><s:property value="nombre" /></h4><br/>
                 			<h5>
                 			<s:property value="anio" /><br/>

@@ -110,7 +110,6 @@ public class ListaPeliculas {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-        	//System.out.println(nombre+"|"+anio+"|"+calificacion+"|"+imdb+"|"+cal_imdb+"|"+trailer+"|"+categoria+"|"+comentario+"|"+tapa);
 			pel.addLast(new Pelicula(nombre, anio, calificacion, imdb, cal_imdb, trailer, categoria, comentario, tapa));
         	nombre = aux.leerLinea();
         }

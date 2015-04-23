@@ -27,6 +27,7 @@ public class ManejadorAction extends ActionSupport {
 	private String tapa;
 	private PositionList<PositionList<Pelicula>> listaDeListaPeliculas;
 	private PositionList<Pelicula> listaPeliculas;
+	private PositionList<String> listaNombresPeliculas;
 	
 	public String executeCambiarInsertar(){
 		new ListaPeliculas().cambiarInsertar(nombre, anio, calificacion, imdb, cal_imdb, trailer, categoria, comentario, tapa);
@@ -37,8 +38,10 @@ public class ManejadorAction extends ActionSupport {
 		listaDeListaPeliculas = new DoubleLinkedList<PositionList<Pelicula>>();
 		PositionList<Pelicula> auxList = null;
 		listaPeliculas = new ListaPeliculas().listarPeliculas();
+		listaNombresPeliculas = new DoubleLinkedList<String>();
 		int i = 0;
 		for(Pelicula p : listaPeliculas){
+			listaNombresPeliculas.addLast(p.getNombre());
 			if(i==0){
 				auxList = new DoubleLinkedList<Pelicula>();
 				listaDeListaPeliculas.addLast(auxList);
@@ -46,15 +49,17 @@ public class ManejadorAction extends ActionSupport {
 			auxList.addLast(p);
 			i = (i+1) % 4;
 		}
-		System.out.println(listaDeListaPeliculas.size());
-		for(PositionList<Pelicula> lp : listaDeListaPeliculas){
-			for(Pelicula p : lp){
-				System.out.println(p.getNombre());
-			}
-		}
 		return SUCCESS;
 	}
-	
+		
+	public PositionList<String> getListaNombresPeliculas() {
+		return listaNombresPeliculas;
+	}
+
+	public void setListaNombresPeliculas(PositionList<String> listaNombresPeliculas) {
+		this.listaNombresPeliculas = listaNombresPeliculas;
+	}
+
 	public String executeBuscarPelicula(){
 		pelicula = new ListaPeliculas().buscarPelicula(nombre);
 		return SUCCESS;
