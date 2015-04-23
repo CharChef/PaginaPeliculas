@@ -2,7 +2,6 @@ package paginaPelicula.controlador.model;
 
 import java.net.MalformedURLException;
 import java.net.URL;
-
 import TDALista.BoundaryViolationException;
 import TDALista.DoubleLinkedList;
 import TDALista.EmptyListException;
@@ -139,15 +138,27 @@ public class ListaPeliculas {
 					if(peliminar.element().getNombre().equals(nombre)){
 						break;
 					}
-					peliminar = pel.last()==peliminar ? null : pel.next(peliminar);
+					peliminar = pel.last().equals(peliminar) ? null : pel.next(peliminar);
 				}
-				pel.remove(peliminar);
-			    setearPeliculas(pel);
+				if(peliminar!=null){
+					pel.remove(peliminar);
+					setearPeliculas(pel);
+				}
 			}
 		}catch(InvalidPositionException | EmptyListException | BoundaryViolationException e){
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+	}
+	
+	public Pelicula buscarPelicula(String nombre){
+		PositionList<Pelicula> pel = listarPeliculas();
+		Pelicula sal = null;
+		for(Pelicula p : pel){
+			sal = p.getNombre().equals(nombre) ? p : null;
+		}
+		
+		return sal;
 	}
 
 	private void setearPeliculas(PositionList<Pelicula> pelis) {
