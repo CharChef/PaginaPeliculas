@@ -153,8 +153,12 @@ public class ListaPeliculas {
 	public Pelicula buscarPelicula(String nombre){
 		PositionList<Pelicula> pel = listarPeliculas();
 		Pelicula sal = null;
-		for(Pelicula p : pel){
-			sal = p.getNombre().equals(nombre) ? p : null;
+		for (Pelicula pelicula : pel) 
+		{
+			if(pelicula.getNombre().equals(nombre))
+			{
+				sal = pelicula;
+			}
 		}
 		
 		return sal;

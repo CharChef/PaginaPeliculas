@@ -47,7 +47,7 @@
             		<td class="celda" style="background-image: url(<s:property value = "tapa"/>)">
                 		<h4><s:property value="nombre" /></h4><br/>
                 		<h5>
-                		<s:property value="anio" /><br/>
+                		<s:property value="anio"/><br/>
                 		<s:property value="categoria" /><br/>
                 		<s:property value="cal_imdb" />
                 		</h5>

@@ -22,19 +22,32 @@
         </div> 
         
         <div class="panelUsuario">
-            <s:text name="Administrador"></s:text>
+           	<s:text name="Administrador"></s:text>
         </div> 
         
         <div>
-            <s:hidden name="nomVie" value="nombre"/>
-            Nombre: <s:property value ="nombre"/><br/>
-            Año: <s:property value ="anio"/><br/>
-            Categoria: <s:property value ="categoria"/><br/>
-            Calificación: <s:property value ="calificacion"/><br/>
-            IMDB: <s:property value = "imdb"/><br/>
-            Calificación a IMDB: <s:property value = "cal_imdb"/><br/>
-            Link Trailer: <s:property value ="trailer"/><br/>
-            Comentario: <s:property value ="comentario"/><br/>
+       		<table class="tablaInfo" align="center">
+        		<tr>
+        			<td class="portadaPelicula" style="background-image: url(<s:property value="pelicula.tapa"/>)">
+        			
+        			<td class="infoPeli" align="left">
+        				<h3>Nombre: </h3><s:property value="pelicula.nombre"/><br/>
+            			<h3>Año: </h3><s:property value="pelicula.anio"/><br/>
+	           	 		<h3>Categoria: </h3><s:property value="pelicula.categoria"/><br/>
+	            		<h3>Calificación: </h3>
+	            			<s:if test="pelicula.calificacion==0">
+									Sin calificar
+							</s:if>
+							<s:else>
+ 								   <s:property value="pelicula.calificacion"/><br/>
+							</s:else>
+	            		<h3>IMDB: </h3><s:property value = "pelicula.imdb"/><br/>
+	            		<h3>Calificación a IMDB: </h3><s:property value = "pelicula.cal_imdb"/><br/>
+	            		<h3>Link Trailer: </h3><s:property value ="pelicula.trailer"/><br/>
+	            		<h3>Comentario: </h3><s:property value ="pelicula.comentario"/><br/>
+        			</td>
+        		</tr>
+        	</table>
         </div>
 	</body>
 </html>

@@ -133,3 +133,24 @@ h5
     width: 600px;
     margin:0 auto;        
 }
+
+.portadaPelicula
+{
+	background-repeat: no-repeat;
+	background-size: cover;
+	border: 2px solid white;
+	width: 300px;
+	height: 450px;
+}
+
+.infoPeli
+{
+	font-family:Verdana,Helvetica;
+	font-size:12px;
+	top: 400px;
+	left: 400px;
+	padding-left: 20px;
+	width: 400px;
+	overflow: auto;
+	
+}
