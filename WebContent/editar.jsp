@@ -25,7 +25,7 @@
         
         <div>
             <s:form action="buscarPelicula">
-           		<s:submit class="botonI" value="Cerrar Sesión"></s:submit>
+           		<s:submit class="botonI" value="buscar"></s:submit>
            	</s:form>
         </div> 
         

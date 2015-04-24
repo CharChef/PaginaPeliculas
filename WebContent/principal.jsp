@@ -39,14 +39,15 @@
 				<tr>
 					<s:iterator value="#lista">
             			<td class="celda" style="background-image: url(<s:property value = "tapa"/>)"> 
-            			<a href="<s:url namespace="/" action="mostrarPelicula"><s:param name="nombre" value="%{nombre}" /></s:url>">
-                			<h4><s:property value="nombre" /></h4><br/>
-                			<h5>
+            			<a class="linkPelicula" href="<s:url namespace="/" action="mostrarPelicula"><s:param name="nombre" value="%{nombre}" /></s:url>">
+                			<h4 class="cartelerah4"><s:property value="nombre" /></h4>
+                			</a>
+                			<h5 class="cartelerah5">
+                			
                 			<s:property value="anio" /><br/>
                 			<s:property value="categoria" /><br/>
                 			<s:property value="cal_imdb" />
                 			</h5>
-                			</a>
                 		</td>
                 	</s:iterator>     
         		</tr>

@@ -25,20 +25,20 @@
         			<td class="portadaPelicula" style="background-image: url(<s:property value="pelicula.tapa"/>)">
         			
         			<td class="infoPeli" align="left">
-        				<h3>Nombre: </h3><s:property value="pelicula.nombre"/><br/>
-            			<h3>Año: </h3><s:property value="pelicula.anio"/><br/>
-	           	 		<h3>Categoria: </h3><s:property value="pelicula.categoria"/><br/>
-	            		<h3>Calificación: </h3>
+        				<h2>Nombre: </h2><s:property value="pelicula.nombre"/><br/>
+            			<h2>Año: </h2><s:property value="pelicula.anio"/><br/>
+	           	 		<h2>Categoria: </h2><s:property value="pelicula.categoria"/><br/>
+	            		<h2>Calificación: </h2>
 	            			<s:if test="pelicula.calificacion==0">
 									Sin calificar
 							</s:if>
 							<s:else>
  								   <s:property value="pelicula.calificacion"/><br/>
 							</s:else>
-	            		<h3>IMDB: </h3><s:property value = "pelicula.imdb"/><br/>
-	            		<h3>Calificación a IMDB: </h3><s:property value = "pelicula.cal_imdb"/><br/>
-	            		<h3>Link Trailer: </h3><s:property value ="pelicula.trailer"/><br/>
-	            		<h3>Comentario: </h3><s:property value ="pelicula.comentario"/><br/>
+	            		<h2>IMDB: </h2><a class="linkInfo" href="<s:property value = "pelicula.imdb"/>" > Visitar IMDB</a><br/>
+	            		<h2>Calificación a IMDB: </h2><s:property value = "pelicula.cal_imdb"/><br/>
+	            		<h2>Link Trailer: </h2><a class="linkInfo" href="<s:property value="pelicula.trailer" />" > Ver trailer</a><br/>
+	            		<h2>Comentario: </h2><s:property value ="pelicula.comentario"/><br/>
         			</td>
         		</tr>
         	</table>

@@ -30,5 +30,12 @@ Struts Configuration 2.0//EN" "http://struts.apache.org/dtds/struts-2.0.dtd">
 			<result name="success">mostrar.jsp</result>
 		</action>
 		
+		<!-- 
+		<action name="volver" class="paginaPelicula.controlador.action.LoginAction"> 
+			<result name="success">login.jsp</result>
+			<result name="error">index.jsp</result>
+		</action>
+		 -->
+		
 	</package>
 </struts>
