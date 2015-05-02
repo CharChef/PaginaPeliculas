@@ -21,18 +21,18 @@
         </s:form>
         
         <div align="center">
-       		<s:form class="formEditar" action="finEdicion">
-       			<s:textfield label="Nombre" class="textEdit" name="nombre" value="%{pelicula.nombre}"/>
-	       		<s:textfield label="Año" class="textEdit" name="anio" value="%{pelicula.anio}"/>
-	       		<s:textfield label="Categoria" class="textEdit" name="categoria" value="%{pelicula.categoria}"/>
+       		<s:form class="formEditar" action="agregarPelicula">
+       			<s:textfield label="Nombre" class="textEdit" name="nombre"/>
+	       		<s:textfield label="Año" class="textEdit" name="anio"/>
+	       		<s:textfield label="Categoria" class="textEdit" name="categoria"/>
 	       		<s:select label="Calificación" class="textEdit" list="#{'1':'1','2':'2','3':'3','4':'4','5':'5','6':'6','7':'7','8':'8','9':'9','10':'10'}" 
-					headerKey="1" name="calificacion" value="%{pelicula.calificacion}"/>
- 	      		<s:textfield label="Link a IMDB" class="textEdit" name="imdb" value="%{pelicula.imdb}"/>
- 	      		<s:textfield label="Calificación de IMDB" class="textEdit" name="cal_imdb" value="%{pelicula.cal_imdb}"/>
- 	      		<s:textfield label="Link a Trailer" class="textEdit" name="trailer" value="%{pelicula.trailer}"/>
- 	      		<s:textarea label="Comentario" class="areaEdit" name="comentario" value="%{pelicula.comentario}"></s:textarea>
- 	      		<s:textfield label="URL de Imagen" class="textEdit" name="tapa" value="%{pelicula.tapa}"> </s:textfield>
- 	      		<s:submit class="BotonBuscar" value="Fin de Edición" align="center" ></s:submit>
+					headerKey="1" name="calificacion"/>
+ 	      		<s:textfield label="Link a IMDB" class="textEdit" name="imdb"/>
+ 	      		<s:textfield label="Calificación de IMDB" class="textEdit" name="cal_imdb"/>
+ 	      		<s:textfield label="Link a Trailer" class="textEdit" name="trailer"/>
+ 	      		<s:textarea label="Comentario" class="areaEdit" name="comentario"></s:textarea>
+ 	      		<s:textfield label="URL de Imagen" class="textEdit" name="tapa"> </s:textfield>
+ 	      		<s:submit class="BotonBuscar" value="Agregar" align="center" ></s:submit>
 			</s:form>
 			
 			<s:form action="index">

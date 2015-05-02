@@ -29,6 +29,12 @@
         			<s:submit class="BotonBuscar" value="Buscar" align="center" ></s:submit>
         		</div>
         	</s:form>
+        	
+        	<s:form action="index">
+				<div align="center">
+   	     			<s:submit class="BotonBuscar" value="Cancelar" align="center" ></s:submit>
+    	    	</div>
+			</s:form>
         </div>
 	</body>
 </html>

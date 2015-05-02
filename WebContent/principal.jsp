@@ -20,7 +20,7 @@
         </s:form>
         
         <div class="botones" align="center">
-        	<s:form action="editarPelicula">
+        	<s:form action="agregarNuevaPelicula">
             	<s:submit class="BotonesAct" value="Agregar Pelicula"></s:submit>
             </s:form>
             

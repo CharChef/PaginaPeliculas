@@ -31,17 +31,10 @@ public class ManejadorAction extends ActionSupport {
 	private PositionList<Pelicula> listaPeliculas;
 	private PositionList<String> listaNombresPeliculas;
 		
-	public String executeCambiarInsertar(){
-		if(nombre==null)
-		{
-			System.out.println("No recibi nada");
-		}
-		else
-		{
-			System.out.println(nombre+" "+anio+" "+calificacion+" "+imdb+" "+cal_imdb+" "+trailer+" "+categoria+" "+comentario+" "+tapa);
-			new ListaPeliculas().cambiarInsertar(nombre, anio, calificacion, imdb, cal_imdb, trailer, categoria, comentario, tapa);
-		}
-		return SUCCESS;
+	public void executeCambiarInsertar(){
+		ListaPeliculas aux = new ListaPeliculas();
+		aux.cambiarInsertar(nombre, anio, calificacion, imdb, cal_imdb, trailer, categoria, comentario, tapa);
+		pelicula = aux.buscarPelicula(nombre);
 	}
 	
 	public String executeListarPeliculas(){
