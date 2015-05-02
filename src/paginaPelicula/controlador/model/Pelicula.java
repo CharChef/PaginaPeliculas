@@ -7,9 +7,9 @@ public class Pelicula {
 	private String nombre;
 	private int anio;
 	private int calificacion;
-	private URL imdb;
+	private String imdb;
 	private double cal_imdb;
-	private URL trailer;
+	private String trailer;
 	private String categoria;
 	private String comentario;
 	private String tapa;
@@ -19,8 +19,8 @@ public class Pelicula {
 		
 	}
 	
-	public Pelicula(String nombre, int anio, int calificacion, URL imdb,
-			double cal_imdb, URL trailer, String categoria, String comentario,
+	public Pelicula(String nombre, int anio, int calificacion, String imdb,
+			double cal_imdb, String trailer, String categoria, String comentario,
 			String tapa) {
 		super();
 		this.nombre = nombre;
@@ -58,11 +58,11 @@ public class Pelicula {
 		this.calificacion = calificacion;
 	}
 
-	public URL getImdb() {
+	public String getImdb() {
 		return imdb;
 	}
 
-	public void setImdb(URL imdb) {
+	public void setImdb(String imdb) {
 		this.imdb = imdb;
 	}
 
@@ -74,11 +74,11 @@ public class Pelicula {
 		this.cal_imdb = cal_imdb;
 	}
 
-	public URL getTrailer() {
+	public String getTrailer() {
 		return trailer;
 	}
 
-	public void setTrailer(URL trailer) {
+	public void setTrailer(String trailer) {
 		this.trailer = trailer;
 	}
 

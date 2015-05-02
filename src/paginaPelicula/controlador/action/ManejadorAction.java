@@ -1,11 +1,14 @@
 package paginaPelicula.controlador.action;
 
 import java.net.URL;
+
 import paginaPelicula.controlador.model.ListaPeliculas;
 import paginaPelicula.controlador.model.Pelicula;
 import TDALista.DoubleLinkedList;
 import TDALista.PositionList;
+
 import com.opensymphony.xwork2.ActionSupport;
+import com.sun.org.apache.bcel.internal.generic.RETURN;
 
 public class ManejadorAction extends ActionSupport {
 	
@@ -17,20 +20,27 @@ public class ManejadorAction extends ActionSupport {
 	private Pelicula pelicula;
 	private String nombre;
 	private String comentario;
-	private URL linkTrailer;
 	private int calificacion;
 	private int anio;
-	private URL imdb;
+	private String imdb;
 	private double cal_imdb;
-	private URL trailer;
+	private String trailer;
 	private String categoria;
 	private String tapa;
 	private PositionList<PositionList<Pelicula>> listaDeListaPeliculas;
 	private PositionList<Pelicula> listaPeliculas;
 	private PositionList<String> listaNombresPeliculas;
-	
+		
 	public String executeCambiarInsertar(){
-		new ListaPeliculas().cambiarInsertar(nombre, anio, calificacion, imdb, cal_imdb, trailer, categoria, comentario, tapa);
+		if(nombre==null)
+		{
+			System.out.println("No recibi nada");
+		}
+		else
+		{
+			System.out.println(nombre+" "+anio+" "+calificacion+" "+imdb+" "+cal_imdb+" "+trailer+" "+categoria+" "+comentario+" "+tapa);
+			new ListaPeliculas().cambiarInsertar(nombre, anio, calificacion, imdb, cal_imdb, trailer, categoria, comentario, tapa);
+		}
 		return SUCCESS;
 	}
 	
@@ -65,13 +75,61 @@ public class ManejadorAction extends ActionSupport {
 		return SUCCESS;
 	}
 	
-	// TODO Auto-generated getters and setters block
-	
 	public String executeBorrarPelicula(){
 		new ListaPeliculas().borrarPelicula(nombre);
 		return SUCCESS;
 	}
+	
+	// TODO Auto-generated getters and setters block
+	
+	public int getAnio() {
+		return anio;
+	}
 
+	public void setAnio(int anio) {
+		this.anio = anio;
+	}
+
+	public String getImdb() {
+		return imdb;
+	}
+
+	public void setImdb(String imdb) {
+		this.imdb = imdb;
+	}
+
+	public double getCal_imdb() {
+		return cal_imdb;
+	}
+
+	public void setCal_imdb(double cal_imdb) {
+		this.cal_imdb = cal_imdb;
+	}
+
+	public String getTrailer() {
+		return trailer;
+	}
+
+	public void setTrailer(String trailer) {
+		this.trailer = trailer;
+	}
+
+	public String getCategoria() {
+		return categoria;
+	}
+
+	public void setCategoria(String categoria) {
+		this.categoria = categoria;
+	}
+
+	public String getTapa() {
+		return tapa;
+	}
+
+	public void setTapa(String tapa) {
+		this.tapa = tapa;
+	}
+	
 	public Pelicula getPelicula() {
 		return pelicula;
 	}
@@ -94,14 +152,6 @@ public class ManejadorAction extends ActionSupport {
 
 	public void setComentario(String comentario) {
 		this.comentario = comentario;
-	}
-
-	public URL getLinkTrailer() {
-		return linkTrailer;
-	}
-
-	public void setLinkTrailer(URL linkTrailer) {
-		this.linkTrailer = linkTrailer;
 	}
 
 	public int getCalificacion() {

@@ -11,6 +11,9 @@
 	</head>
 	
 	<body>
-		<s:action name="mostrarPeliculas" executeResult="true"/>
+		<s:action name="mostrarPelicula" executeResult="true">
+			<s:param name="nombre" value="%{pelicula.nombre}" />
+		</s:action>
+
 	</body>
 </html>

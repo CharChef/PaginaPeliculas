@@ -35,6 +35,14 @@ h2
 	color: #7d8686;
 }
 
+h3
+{
+	font-family:Verdana,Helvetica;
+	font-size:15px;
+	color: #7d8686;
+	margin-top: 2px:
+}
+
 .cartelerah4
 {
 	background:url(barra.png);
@@ -80,6 +88,28 @@ h2
  	width:500px;
  	height:50px;
  	margin-bottom: 5px;
+ 	background-image: url(barra2cla.png);
+}
+
+.BotonBuscar:HOVER 
+{
+ 	background: #004040;
+	text-decoration: none;
+  	background: transparent;
+  	background-image: url(barra2osc.png);
+}
+
+.BotonBuscar
+{
+	font-size:15px;
+	font-family:Verdana,Helvetica;
+	font-weight:bold;
+ 	color:#80ffff;
+ 	background: transparent;
+ 	border: transparent;
+ 	width:500px;
+ 	height:50px;
+ 	margin-top: 20px;
  	background-image: url(barra2cla.png);
 }
 
@@ -182,3 +212,55 @@ h2
 	font-size:12px;
 	color: #ffffff;
 }
+
+.mensajeError
+{
+	font-family:Verdana,Helvetica;
+	font-size:40px;
+	font-style:italic;
+	color: #aaffff;
+}
+
+.mensajeError2
+{
+	margin-top:10px;
+	font-family:Verdana,Helvetica;
+	font-size:16px;
+	font-style:italic;
+	color: #aaffff;
+}
+
+.selectPeli
+{
+	background-color:#383636;
+	border-color:transparent;
+	width: 350px;
+	font-family:Verdana,Helvetica;
+	font-size:12px;
+	color: #bfdfdf;
+}
+
+.textEdit
+{
+	background-color:#383636;
+	border-color:transparent;
+	margin-bottom:10px;
+	width: 400px;
+	font-family:Verdana,Helvetica;
+	font-size:12px;
+	color: #bfdfdf;
+}
+
+.areaEdit
+{
+	background-color:#383636;
+	border-color:transparent;
+	margin-bottom:10px;
+	font-family:Verdana,Helvetica;
+	font-size:12px;
+	color: #bfdfdf;
+	width: 400px;
+	height: 150px;
+
+}
+

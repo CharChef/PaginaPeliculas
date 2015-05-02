@@ -36,8 +36,8 @@ public class ListaPeliculas {
         return ret;
     }
 	
-	public boolean cambiarInsertar(String nombre, int anio, int calificacion, URL imdb,
-			double cal_imdb, URL trailer, String categoria, String comentario,
+	public boolean cambiarInsertar(String nombre, int anio, int calificacion, String imdb,
+			double cal_imdb, String trailer, String categoria, String comentario,
 			String tapa){
         PositionList<Pelicula> pel = listarPeliculas();
         boolean found = false;
@@ -89,27 +89,22 @@ public class ListaPeliculas {
     	String nombre = aux.leerLinea();
     	int anio = 0;
     	int calificacion = 0;
-    	URL imdb = null;
+    	String imdb = null;
 		double cal_imdb = 0;
-		URL trailer = null;
+		String trailer = null;
 		String categoria = "";
     	String comentario = "";
     	String tapa = "";
     	
         while (nombre != null) {
-        	try {
-        		anio = Integer.parseInt(aux.leerLinea());
-            	calificacion = Integer.parseInt(aux.leerLinea());
-        		imdb = new URL(aux.leerLinea());
-        		cal_imdb = Double.parseDouble(aux.leerLinea());
-        		trailer = new URL(aux.leerLinea());
-        		categoria = aux.leerLinea();
-            	comentario = aux.leerLinea();
-            	tapa = aux.leerLinea();
-			} catch (MalformedURLException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
+        	anio = Integer.parseInt(aux.leerLinea());
+            calificacion = Integer.parseInt(aux.leerLinea());
+        	imdb = aux.leerLinea();
+        	cal_imdb = Double.parseDouble(aux.leerLinea());
+        	trailer = aux.leerLinea();
+        	categoria = aux.leerLinea();
+            comentario = aux.leerLinea();
+            tapa = aux.leerLinea();
 			pel.addLast(new Pelicula(nombre, anio, calificacion, imdb, cal_imdb, trailer, categoria, comentario, tapa));
         	nombre = aux.leerLinea();
         }
@@ -161,7 +156,6 @@ public class ListaPeliculas {
 				break;
 			}
 		}
-		
 		return sal;
 	}
 

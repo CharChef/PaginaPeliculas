@@ -19,15 +19,16 @@
            	<s:submit class="botonI" value="Cerrar Sesión"></s:submit>
         </s:form>
         
-        <div align="center">
-        	<s:select label="Seleccionar Pelicula" cssClass="check-button" headerKey="1" list="listaNombresPeliculas" name="nombre" value="1" />
+        <div class="linkInfo" align="center">
+        	<s:form action="buscarPelicula" namespace="/">
+        		<div align="center">
+        			<s:select label="Seleccionar Pelicula" cssClass="selectPeli" headerKey="1" list="listaNombresPeliculas" name="nombre" />
+        		</div>
+        
+        		<div align="center">
+        			<s:submit class="BotonBuscar" value="Buscar" align="center" ></s:submit>
+        		</div>
+        	</s:form>
         </div>
-        
-        <div>
-            <s:form action="buscarPelicula">
-           		<s:submit class="botonI" value="buscar"></s:submit>
-           	</s:form>
-        </div> 
-        
 	</body>
 </html>

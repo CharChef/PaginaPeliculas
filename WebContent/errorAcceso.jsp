@@ -15,8 +15,18 @@
             <header></header>
         </div>
     
-		<div align="center">
-			<h1><s:text name="mal papa"></s:text></h1>
+		<div class="mensajeError" align="center">
+			<s:text name=":( ops..."></s:text>
 		</div>
+		
+		<div class="mensajeError2" align="center">
+			<s:text name="Nombre de usuario y/o contraseña incorrectos. Vuelva a interntarlo."></s:text>
+		</div>
+		
+		<div align="center" style="padding-top: 20px">
+        <s:form action="index">
+        	<s:submit class="BotonesAct" value="Volver" ></s:submit>
+        </s:form>
+        </div>
 	</body>
 </html>

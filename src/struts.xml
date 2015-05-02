@@ -3,10 +3,6 @@
 Struts Configuration 2.0//EN" "http://struts.apache.org/dtds/struts-2.0.dtd">
 
 <struts>
-	<constant name="struts.enable.DynamicMethodInvocation" value="false" />
-    <constant name="struts.devMode" value="false" />
-    <constant name="struts.custom.i18n.resources" value="ApplicationResources" />
-    
 	<package name="default" extends="struts-default">
 			
 		<action name="index" class="paginaPelicula.controlador.action.ManejadorAction" method="executeListarPeliculas"> 
@@ -15,6 +11,7 @@ Struts Configuration 2.0//EN" "http://struts.apache.org/dtds/struts-2.0.dtd">
 		
 		<action name="mostrarPeliculas" class="paginaPelicula.controlador.action.ManejadorAction" method="executeListarPeliculas"> 
 			<result name="success">principal.jsp</result>
+			<result name="input">principal.jsp</result>
 		</action>
 		
 		<action name="ingresar" class="paginaPelicula.controlador.action.LoginAction"> 
@@ -28,14 +25,17 @@ Struts Configuration 2.0//EN" "http://struts.apache.org/dtds/struts-2.0.dtd">
 		
 		<action name="mostrarPelicula" class="paginaPelicula.controlador.action.ManejadorAction" method="executeBuscarPelicula"> 
 			<result name="success">mostrar.jsp</result>
+			<result name="input">mostrar.jsp</result>
 		</action>
-		
-		<!-- 
-		<action name="volver" class="paginaPelicula.controlador.action.LoginAction"> 
-			<result name="success">login.jsp</result>
-			<result name="error">index.jsp</result>
+				 
+		<action name="finEdicion" class="paginaPelicula.controlador.action.ManejadorAction" method="executeCambiarInsertar"> 
+			<result name="input">intermedio.jsp</result>
+			<result name="success">intermedio.jsp</result>
 		</action>
-		 -->
+		 
+		 <action name="buscarPelicula" class="paginaPelicula.controlador.action.ManejadorAction" method="executeBuscarPelicula"> 
+			<result name="success">edicion.jsp</result>
+		</action>
 		
 	</package>
 </struts>
