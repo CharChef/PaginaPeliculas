@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@taglib prefix="s" uri="/struts-tags" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -16,7 +16,7 @@
         </div>
         
         <s:form action="index" class="inisec">
-           	<s:submit class="botonI" value="Cerrar Sesión"></s:submit>
+           	<s:submit class="botonI" value="Cerrar SesiÃ³n"></s:submit>
         </s:form>
         
         <div class="botones" align="center">
@@ -28,7 +28,7 @@
             	<s:submit class="BotonesAct" value="Editar Pelicula"></s:submit>
             </s:form>
             
-            <s:form action="editarPelicula">
+            <s:form action="eliminarPelicula">
         		<s:submit class="BotonesAct" value="Eliminar Pelicula"></s:submit>
        		</s:form>
         </div> 
@@ -39,7 +39,7 @@
 				<tr>
 					<s:iterator value="#lista">
             			<td class="celda" style="background-image: url(<s:property value = "tapa"/>)"> 
-            			<a class="linkPelicula" href="<s:url namespace="/" action="mostrarPelicula"><s:param name="nombre" value="%{nombre}" /></s:url>">
+            			<a class="linkPelicula" href="<s:url namespace="/" action="mostrarPeliculaAct"><s:param name="nombre" value="%{nombre}" /></s:url>">
                 			<h4 class="cartelerah4"><s:property value="nombre" /></h4>
                 			</a>
                 			<h5 class="cartelerah5">

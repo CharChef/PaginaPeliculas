@@ -31,10 +31,10 @@ public class ManejadorAction extends ActionSupport {
 	private PositionList<Pelicula> listaPeliculas;
 	private PositionList<String> listaNombresPeliculas;
 		
-	public void executeCambiarInsertar(){
+	public String executeCambiarInsertar(){
 		ListaPeliculas aux = new ListaPeliculas();
 		aux.cambiarInsertar(nombre, anio, calificacion, imdb, cal_imdb, trailer, categoria, comentario, tapa);
-		pelicula = aux.buscarPelicula(nombre);
+		return INPUT;		
 	}
 	
 	public String executeListarPeliculas(){

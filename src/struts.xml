@@ -27,13 +27,18 @@ Struts Configuration 2.0//EN" "http://struts.apache.org/dtds/struts-2.0.dtd">
 			<result name="success">mostrar.jsp</result>
 			<result name="input">mostrar.jsp</result>
 		</action>
+		
+		<action name="mostrarPeliculaAct" class="paginaPelicula.controlador.action.ManejadorAction" method="executeBuscarPelicula"> 
+			<result name="success">mostrarLogueado.jsp</result>
+			<result name="input">mostrarLogueado.jsp</result>
+		</action>
 				 
 		<action name="finEdicion" class="paginaPelicula.controlador.action.ManejadorAction" method="executeCambiarInsertar"> 
 			<result name="input">intermedio.jsp</result>
 		</action>
 		 
 		<action name="agregarPelicula" class="paginaPelicula.controlador.action.ManejadorAction" method="executeCambiarInsertar"> 
-			<result>intermedio2.jsp</result>
+			<result name="input">intermedio2.jsp</result>
 		</action>
 		 
 		<action name="agregarNuevaPelicula"> 
@@ -43,5 +48,14 @@ Struts Configuration 2.0//EN" "http://struts.apache.org/dtds/struts-2.0.dtd">
 		<action name="buscarPelicula" class="paginaPelicula.controlador.action.ManejadorAction" method="executeBuscarPelicula"> 
 			<result name="success">edicion.jsp</result>
 		</action>
+		
+		<action name="eliminarPelicula" class="paginaPelicula.controlador.action.ManejadorAction" method="executeListarPeliculas"> 
+			<result name="success">buscar.jsp</result>
+		</action>
+		
+		<action name="buscaryEliminarPelicula" class="paginaPelicula.controlador.action.ManejadorAction" method="executeBorrarPelicula"> 
+			<result name="success">borradoExito.jsp</result>
+		</action>
+		
 	</package>
 </struts>

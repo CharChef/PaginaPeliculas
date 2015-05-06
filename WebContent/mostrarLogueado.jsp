@@ -63,7 +63,7 @@
         </div>
         
         <div align="center" style="padding-top: 20px">
-        <s:form action="index">
+        <s:form action="mostrarPeliculas">
         	<s:submit class="BotonesAct" value="Volver" ></s:submit>
         </s:form>
         </div>

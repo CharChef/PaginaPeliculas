@@ -20,13 +20,13 @@
         </s:form>
         
         <div class="linkInfo" align="center">
-        	<s:form action="buscarPelicula" namespace="/">
+        	<s:form action="buscaryEliminarPelicula" namespace="/">
         		<div align="center">
         			<s:select label="Seleccionar Pelicula" cssClass="selectPeli" headerKey="1" list="listaNombresPeliculas" name="nombre" />
         		</div>
         
         		<div align="center">
-        			<s:submit class="BotonBuscar" value="Buscar" align="center" ></s:submit>
+        			<s:submit class="BotonBuscar" value="Eliminar" align="center" ></s:submit>
         		</div>
         	</s:form>
         	
