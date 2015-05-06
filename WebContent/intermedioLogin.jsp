@@ -11,6 +11,6 @@
 	</head>
 	
 	<body>
-		<s:action name="mostrarPeliculas" executeResult="true"/>
+		<s:action name="principalConLoggeo" executeResult="true"/>
 	</body>
 </html>

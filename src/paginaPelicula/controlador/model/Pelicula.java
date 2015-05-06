@@ -1,8 +1,7 @@
 package paginaPelicula.controlador.model;
 
-import java.net.URL;
-
-public class Pelicula {
+public class Pelicula 
+{
 
 	private String nombre;
 	private int anio;
@@ -15,13 +14,12 @@ public class Pelicula {
 	private String tapa;
 	
 	public Pelicula()
-	{
-		
-	}
+	{}
 	
 	public Pelicula(String nombre, int anio, int calificacion, String imdb,
 			double cal_imdb, String trailer, String categoria, String comentario,
-			String tapa) {
+			String tapa)
+	{
 		super();
 		this.nombre = nombre;
 		this.anio = anio;
@@ -34,6 +32,8 @@ public class Pelicula {
 		this.tapa = tapa;
 	}
 
+	// TODO Auto-generated getters and setters block
+	
 	public String getNombre() {
 		return nombre;
 	}
@@ -105,6 +105,5 @@ public class Pelicula {
 	public void setTapa(String tapa) {
 		this.tapa = tapa;
 	}
-	
 	
 }

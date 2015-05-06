@@ -15,31 +15,37 @@
             <header></header>
         </div>
         
-        <s:form action="index" class="inisec">
+        <s:form action="principalSinLoggeo" class="inisec">
            	<s:submit class="botonI" value="Cerrar Sesión"></s:submit>
         </s:form>
         
         <div class="botones" align="center">
-        	<s:form action="agregarNuevaPelicula">
+        	<s:form action="EdicionParaAgregar">
             	<s:submit class="BotonesAct" value="Agregar Pelicula"></s:submit>
             </s:form>
             
-            <s:form action="editarPelicula">
+            <s:form action="elegirParaEditar">
             	<s:submit class="BotonesAct" value="Editar Pelicula"></s:submit>
             </s:form>
             
-            <s:form action="eliminarPelicula">
+            <s:form action="elegirParaEliminar">
         		<s:submit class="BotonesAct" value="Eliminar Pelicula"></s:submit>
        		</s:form>
         </div> 
-        
+             
+        <s:if test="hasActionErrors()">
+    		<div class="mensajeError" align="center">
+       			<s:text name="Sin peliculas cargadas."/>
+    		</div>
+		</s:if>
+                
         <div class="tabla" align="center">
         	<table >
 				<s:iterator value="listaDeListaPeliculas" var="lista" status="estado">
 				<tr>
 					<s:iterator value="#lista">
             			<td class="celda" style="background-image: url(<s:property value = "tapa"/>)"> 
-            			<a class="linkPelicula" href="<s:url namespace="/" action="mostrarPeliculaAct"><s:param name="nombre" value="%{nombre}" /></s:url>">
+            			<a class="linkPelicula" href="<s:url namespace="/" action="verPeliculaConLoggeo"><s:param name="nombre" value="%{nombre}" /></s:url>">
                 			<h4 class="cartelerah4"><s:property value="nombre" /></h4>
                 			</a>
                 			<h5 class="cartelerah5">

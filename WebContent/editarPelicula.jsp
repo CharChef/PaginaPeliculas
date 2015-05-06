@@ -16,7 +16,7 @@
             <header></header>
         </div>
         
-        <s:form action="index" class="inisec">
+        <s:form action="principalSinLoggeo" class="inisec">
            	<s:submit class="botonI" value="Cerrar Sesión"></s:submit>
         </s:form>
         
@@ -35,7 +35,7 @@
  	      		<s:submit class="BotonBuscar" value="Fin de Edición" align="center" ></s:submit>
 			</s:form>
 			
-			<s:form action="index">
+			<s:form action="principalConLoggeo">
 				<div align="center">
    	     			<s:submit class="BotonBuscar" value="Cancelar" align="center" ></s:submit>
     	    	</div>

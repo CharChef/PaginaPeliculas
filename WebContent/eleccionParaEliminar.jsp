@@ -15,22 +15,22 @@
             <header></header>
         </div>
         
-        <s:form action="index" class="inisec">
+        <s:form action="principalSinLoggeo" class="inisec">
            	<s:submit class="botonI" value="Cerrar Sesión"></s:submit>
         </s:form>
         
         <div class="linkInfo" align="center">
-        	<s:form action="buscarPelicula" namespace="/">
+        	<s:form action="eliminarPelicula" namespace="/">
         		<div align="center">
         			<s:select label="Seleccionar Pelicula" cssClass="selectPeli" headerKey="1" list="listaNombresPeliculas" name="nombre" />
         		</div>
         
         		<div align="center">
-        			<s:submit class="BotonBuscar" value="Buscar" align="center" ></s:submit>
+        			<s:submit class="BotonBuscar" value="Eliminar" align="center" ></s:submit>
         		</div>
         	</s:form>
         	
-        	<s:form action="mostrarPeliculas">
+        	<s:form action="principalConLoggeo">
 				<div align="center">
    	     			<s:submit class="BotonBuscar" value="Cancelar" align="center" ></s:submit>
     	    	</div>

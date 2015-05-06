@@ -1,7 +1,5 @@
 package paginaPelicula.controlador.model;
 
-import java.net.MalformedURLException;
-import java.net.URL;
 import TDALista.BoundaryViolationException;
 import TDALista.DoubleLinkedList;
 import TDALista.EmptyListException;

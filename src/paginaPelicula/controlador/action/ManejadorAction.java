@@ -1,14 +1,10 @@
 package paginaPelicula.controlador.action;
 
-import java.net.URL;
-
 import paginaPelicula.controlador.model.ListaPeliculas;
 import paginaPelicula.controlador.model.Pelicula;
 import TDALista.DoubleLinkedList;
 import TDALista.PositionList;
-
 import com.opensymphony.xwork2.ActionSupport;
-import com.sun.org.apache.bcel.internal.generic.RETURN;
 
 public class ManejadorAction extends ActionSupport {
 	
@@ -30,22 +26,33 @@ public class ManejadorAction extends ActionSupport {
 	private PositionList<PositionList<Pelicula>> listaDeListaPeliculas;
 	private PositionList<Pelicula> listaPeliculas;
 	private PositionList<String> listaNombresPeliculas;
-		
-	public String executeCambiarInsertar(){
+	
+	//Metodos de acciones
+	public String executeCambiarInsertar()
+	{
 		ListaPeliculas aux = new ListaPeliculas();
 		aux.cambiarInsertar(nombre, anio, calificacion, imdb, cal_imdb, trailer, categoria, comentario, tapa);
 		return INPUT;		
 	}
 	
-	public String executeListarPeliculas(){
+	public String executeListarPeliculas()
+	{
+		listaPeliculas = new ListaPeliculas().listarPeliculas();
+		if (listaPeliculas.isEmpty())
+		{
+			addActionError(getText("error.listas"));
+			this.addActionMessage("Hola pipi");
+			return ERROR;
+		}
 		listaDeListaPeliculas = new DoubleLinkedList<PositionList<Pelicula>>();
 		PositionList<Pelicula> auxList = null;
-		listaPeliculas = new ListaPeliculas().listarPeliculas();
 		listaNombresPeliculas = new DoubleLinkedList<String>();
 		int i = 0;
-		for(Pelicula p : listaPeliculas){
+		for(Pelicula p : listaPeliculas)
+		{
 			listaNombresPeliculas.addLast(p.getNombre());
-			if(i==0){
+			if(i==0)
+			{
 				auxList = new DoubleLinkedList<Pelicula>();
 				listaDeListaPeliculas.addLast(auxList);
 			}
@@ -55,20 +62,14 @@ public class ManejadorAction extends ActionSupport {
 		return SUCCESS;
 	}
 		
-	public PositionList<String> getListaNombresPeliculas() {
-		return listaNombresPeliculas;
-	}
-
-	public void setListaNombresPeliculas(PositionList<String> listaNombresPeliculas) {
-		this.listaNombresPeliculas = listaNombresPeliculas;
-	}
-
-	public String executeBuscarPelicula(){
-		pelicula = new ListaPeliculas().buscarPelicula(nombre);
+	public String executeBuscarPelicula()
+	{
+		pelicula = new ListaPeliculas().buscarPelicula(nombre); 
 		return SUCCESS;
 	}
 	
-	public String executeBorrarPelicula(){
+	public String executeBorrarPelicula()
+	{
 		new ListaPeliculas().borrarPelicula(nombre);
 		return SUCCESS;
 	}
@@ -155,6 +156,14 @@ public class ManejadorAction extends ActionSupport {
 		this.calificacion = calificacion;
 	}
 
+	public PositionList<String> getListaNombresPeliculas() {
+		return listaNombresPeliculas;
+	}
+
+	public void setListaNombresPeliculas(PositionList<String> listaNombresPeliculas) {
+		this.listaNombresPeliculas = listaNombresPeliculas;
+	}
+	
 	public PositionList<PositionList<Pelicula>> getListaDeListaPeliculas() {
 		return listaDeListaPeliculas;
 	}

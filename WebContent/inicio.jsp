@@ -11,8 +11,6 @@
 	</head>
 	
 	<body>
-		<s:action name="mostrarPeliculaAct" executeResult="true">
-			<s:param name="nombre" value="%{pelicula.nombre}" />
-		</s:action>
+		<s:action name="principalSinLoggeo" executeResult="true"></s:action>
 	</body>
 </html>

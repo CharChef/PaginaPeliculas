@@ -15,7 +15,7 @@
             <header></header>
         </div>
         
-        <s:form action="index" class="inisec">
+        <s:form action="principalSinLoggeo" class="inisec">
            	<s:submit class="botonI" value="Cerrar Sesión"></s:submit>
         </s:form>
                 
@@ -63,9 +63,9 @@
         </div>
         
         <div align="center" style="padding-top: 20px">
-        <s:form action="mostrarPeliculas">
-        	<s:submit class="BotonesAct" value="Volver" ></s:submit>
-        </s:form>
+        	<s:form action="principalConLoggeo">
+        		<s:submit class="BotonesAct" value="Volver" ></s:submit>
+        	</s:form>
         </div>
 	</body>
 </html>

@@ -16,17 +16,17 @@
         </div>
     
 		<div class="mensajeError" align="center">
-			<s:text name=":( ops..."></s:text>
+			<s:text name="¡Exito!"></s:text>
 		</div>
 		
 		<div class="mensajeError2" align="center">
-			<s:text name="Nombre de usuario y/o contraseña incorrectos. Vuelva a interntarlo."></s:text>
+			<s:text name="La pelicula seleccionada fue eliminada correctamente."></s:text>
 		</div>
 		
 		<div align="center" style="padding-top: 20px">
-        <s:form action="index">
-        	<s:submit class="BotonesAct" value="Volver" ></s:submit>
-        </s:form>
+        	<s:form action="principalConLoggeo">
+        		<s:submit class="BotonesAct" value="Volver" ></s:submit>
+       		</s:form>
         </div>
 	</body>
 </html>

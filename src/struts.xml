@@ -3,58 +3,60 @@
 Struts Configuration 2.0//EN" "http://struts.apache.org/dtds/struts-2.0.dtd">
 
 <struts>
+	
+	<constant name="struts.custom.i18n.resources" value="ApplicationResources" />
 	<package name="default" extends="struts-default">
 			
-		<action name="index" class="paginaPelicula.controlador.action.ManejadorAction" method="executeListarPeliculas"> 
-			<result name="success">index.jsp</result>
+		<action name="principalSinLoggeo" class="paginaPelicula.controlador.action.ManejadorAction" method="executeListarPeliculas"> 
+			<result name="success">principalSinLoggeo.jsp</result>
+			<result name="error">principalSinLoggeo.jsp</result>
 		</action>
 		
-		<action name="mostrarPeliculas" class="paginaPelicula.controlador.action.ManejadorAction" method="executeListarPeliculas"> 
-			<result name="success">principal.jsp</result>
-			<result name="input">principal.jsp</result>
+		<action name="principalConLoggeo" class="paginaPelicula.controlador.action.ManejadorAction" method="executeListarPeliculas"> 
+			<result name="success">principalConLoggeo.jsp</result>
+			<result name="input">principalConLoggeo.jsp</result>
+			<result name="error">principalConLoggeo.jsp</result>
 		</action>
 		
-		<action name="ingresar" class="paginaPelicula.controlador.action.LoginAction"> 
-			<result name="success">login.jsp</result>
-			<result name="error">errorAcceso.jsp</result>
+		<action name="loggear" class="paginaPelicula.controlador.action.LoginAction"> 
+			<result name="success">intermedioLogin.jsp</result>
+			<result name="error">mensajeErrorAcceso.jsp</result>
 		</action>
 		
-		<action name="editarPelicula" class="paginaPelicula.controlador.action.ManejadorAction" method="executeListarPeliculas"> 
-			<result name="success">editar.jsp</result>
+		<action name="elegirParaEditar" class="paginaPelicula.controlador.action.ManejadorAction" method="executeListarPeliculas"> 
+			<result name="success">eleccionParaEditar.jsp</result>
+			<result name="error">mensajeErrorSinPeliculas.jsp</result>
 		</action>
 		
-		<action name="mostrarPelicula" class="paginaPelicula.controlador.action.ManejadorAction" method="executeBuscarPelicula"> 
-			<result name="success">mostrar.jsp</result>
-			<result name="input">mostrar.jsp</result>
+		<action name="verPeliculaSinLoggeo" class="paginaPelicula.controlador.action.ManejadorAction" method="executeBuscarPelicula"> 
+			<result name="success">mostrarSinLoggeo.jsp</result>
+			<result name="input">mostrarSinLoggeo.jsp</result>
 		</action>
 		
-		<action name="mostrarPeliculaAct" class="paginaPelicula.controlador.action.ManejadorAction" method="executeBuscarPelicula"> 
-			<result name="success">mostrarLogueado.jsp</result>
-			<result name="input">mostrarLogueado.jsp</result>
+		<action name="verPeliculaConLoggeo" class="paginaPelicula.controlador.action.ManejadorAction" method="executeBuscarPelicula"> 
+			<result name="success">mostrarConLoggeo.jsp</result>
+			<result name="input">mostrarConLoggeo.jsp</result>
 		</action>
 				 
 		<action name="finEdicion" class="paginaPelicula.controlador.action.ManejadorAction" method="executeCambiarInsertar"> 
-			<result name="input">intermedio.jsp</result>
+			<result name="input">intermedioFinEdicion.jsp</result>
+		</action>
+				 
+		<action name="EdicionParaAgregar"> 
+			<result>agregarPelicula.jsp</result>
 		</action>
 		 
-		<action name="agregarPelicula" class="paginaPelicula.controlador.action.ManejadorAction" method="executeCambiarInsertar"> 
-			<result name="input">intermedio2.jsp</result>
-		</action>
-		 
-		<action name="agregarNuevaPelicula"> 
-			<result>agregar.jsp</result>
-		</action>
-		 
-		<action name="buscarPelicula" class="paginaPelicula.controlador.action.ManejadorAction" method="executeBuscarPelicula"> 
-			<result name="success">edicion.jsp</result>
+		<action name="buscarParaEditar" class="paginaPelicula.controlador.action.ManejadorAction" method="executeBuscarPelicula"> 
+			<result name="success">editarPelicula.jsp</result>
 		</action>
 		
-		<action name="eliminarPelicula" class="paginaPelicula.controlador.action.ManejadorAction" method="executeListarPeliculas"> 
-			<result name="success">buscar.jsp</result>
+		<action name="elegirParaEliminar" class="paginaPelicula.controlador.action.ManejadorAction" method="executeListarPeliculas"> 
+			<result name="success">eleccionParaEliminar.jsp</result>
+			<result name="error">mensajeErrorSinPeliculas.jsp</result>
 		</action>
 		
-		<action name="buscaryEliminarPelicula" class="paginaPelicula.controlador.action.ManejadorAction" method="executeBorrarPelicula"> 
-			<result name="success">borradoExito.jsp</result>
+		<action name="eliminarPelicula" class="paginaPelicula.controlador.action.ManejadorAction" method="executeBorrarPelicula"> 
+			<result name="success">mensajeBorradoConExito.jsp</result>
 		</action>
 		
 	</package>

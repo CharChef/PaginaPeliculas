@@ -1,4 +1,3 @@
-
 package paginaPelicula.controlador.action;
 
 import com.opensymphony.xwork2.ActionSupport;
@@ -17,22 +16,21 @@ public class LoginAction extends ActionSupport {
     	this.password="";
     }
  
-    public String execute() {
-    	
-    	if(this.username.equals("")|| this.password.equals("")){
-    		addActionError(getText("error.campos"));
-    		return ERROR;
-    	}else{
-    		if (this.username.equals("admin")
-                    && this.password.equals("admin123")) {
-                return SUCCESS;
-            } else {
-                addActionError(getText("error.login"));
-                return ERROR;
-            }
-    	}
+    public String execute()
+    {
+    	if (this.username.equals("admin")&& this.password.equals("admin123")) 
+    	{
+    		return SUCCESS;
+        } 
+    	else 
+    	{
+            addActionError(getText("error.login"));
+            return ERROR;
+        }
     }
- 
+    
+    // TODO Auto-generated getters and setters block
+    
     public String getUsername() {
         return username;
     }

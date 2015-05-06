@@ -16,12 +16,12 @@
             <header></header>
         </div>
         
-        <s:form action="index" class="inisec">
+        <s:form action="principalSinLoggeo" class="inisec">
            	<s:submit class="botonI" value="Cerrar Sesión"></s:submit>
         </s:form>
         
         <div align="center">
-       		<s:form class="formEditar" action="agregarPelicula">
+       		<s:form class="formEditar" action="finEdicion">
        			<s:textfield label="Nombre*" class="textEdit" name="nombre" required="true"/>
 	       		<s:textfield label="Año*" class="textEdit" name="anio" required="true"/>
 	       		<s:textfield label="Categoria*" class="textEdit" name="categoria" required="true"/>
@@ -35,7 +35,7 @@
  	      		<s:submit class="BotonBuscar" value="Agregar" align="center" ></s:submit>
 			</s:form>
 			
-			<s:form action="mostrarPeliculas">
+			<s:form action="principalConLoggeo">
 				<div align="center">
    	     			<s:submit class="BotonBuscar" value="Cancelar" align="center" ></s:submit>
     	    	</div>

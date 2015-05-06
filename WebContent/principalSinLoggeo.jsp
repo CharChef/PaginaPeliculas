@@ -11,7 +11,7 @@
     </head>
     <body>
     	
-    	<s:form action="ingresar" namespace="/" class="inisec">
+    	<s:form action="loggear" namespace="/" class="inisec">
    	 		<div>
    	 			<s:textfield class="usu" name="username" placeholder="Usuario"/>
    	 		</div>	
@@ -27,13 +27,19 @@
             <header></header>
         </div>
          
+        <s:if test="hasActionErrors()">
+    		<div class="mensajeError" align="center">
+       			<s:text name="Sin peliculas cargadas."/>
+    		</div>
+		</s:if>
+         
         <div class="tabla" align="center">
 			<table >
 				<s:iterator value="listaDeListaPeliculas" var="lista" status="estado">
 				<tr>
 					<s:iterator value="#lista">
             			<td class="celda" style="background-image: url(<s:property value = "tapa"/>)"> 
-            			<a class="linkPelicula" href="<s:url namespace="/" action="mostrarPelicula"><s:param name="nombre" value="%{nombre}" /></s:url>">
+            			<a class="linkPelicula" href="<s:url namespace="/" action="verPeliculaSinLoggeo"><s:param name="nombre" value="%{nombre}" /></s:url>">
                 			<h4 class="cartelerah4"> <s:property value="nombre" /> </h4>
                 			</a>
                 			<h5 class="cartelerah5">
@@ -49,5 +55,5 @@
 			</table>
        </div>
 
-</body>
+	</body>
 </html>
